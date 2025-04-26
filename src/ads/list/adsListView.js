@@ -12,10 +12,12 @@ export function showAdsList(container, ads) {
 		.map((ad) => {
 			return `
             <div class="border border-gray-400 bg-white rounded-b p-4 flex flex-col justify-between leading-normal">
-            <div class="p-2">
+            <div class="relative max-h-64 overflow-hidden">
             <img src="${ad.image || "placeholder.jpg"}" alt="${
 				ad.name
-			} class="h-48 w-96 object-cover mb-4">
+			} class="absolute object-contain w-full h-full">
+             </div>
+            <div class="p-2">
             <h2 class="text-gray-900 font-bold text-xl my-2">${ad.name}</h2>
             <p class="text-gray-700 text-base">${ad.description}</p>
             <p class="font-bold mt-2">${ad.price} USD</p>
