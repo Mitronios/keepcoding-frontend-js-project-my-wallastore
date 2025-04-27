@@ -5,7 +5,7 @@ import {
 	showAdsList,
 } from "./listAdsView.js";
 
-export const adsListController = async (container) => {
+export const listAdsController = async (container) => {
 	renderAdsLoading(container);
 
 	try {

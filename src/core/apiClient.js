@@ -1,3 +1,5 @@
+import { getAuthToken } from "../utils/authUtils.js";
+
 const API_BASE_URL = "http://localhost:8000";
 
 const fetchData = async (endpoint, options = {}) => {
@@ -14,11 +16,11 @@ const fetchData = async (endpoint, options = {}) => {
 		throw new Error(errorMessage);
 	}
 
-	return response.json();
+	return await response.json();
 };
 
 export const get = async (endpoint) => {
-	return fetchData(endpoint);
+	return await fetchData(endpoint);
 };
 
 export const post = async (endpoint, body) => {
@@ -28,5 +30,23 @@ export const post = async (endpoint, body) => {
 			"content-type": "application/json",
 		},
 		body: JSON.stringify(body),
+	});
+};
+
+export const postUsingToken = async (endpoint, options) => {
+	const token = getAuthToken();
+
+	const headers = {
+		"content-type": "application/json",
+	};
+
+	if (token) {
+		headers["Authorization"] = `Bearer ${token}`;
+	}
+
+	return await fetchData(endpoint, {
+		method: "POST",
+		headers: headers,
+		body: JSON.stringify(options),
 	});
 };
