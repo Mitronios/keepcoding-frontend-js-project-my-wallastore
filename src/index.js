@@ -4,6 +4,7 @@ import { listAdsController } from "./ads/list/listAdsController.js";
 import { loginController } from "./auth/login/loginController.js";
 import { registerController } from "./auth/register/registerController.js";
 import { parseAdIdFromHash } from "./utils/parseHash.js";
+import { renderNavbar } from "./components/navbar.js";
 
 const routes = {
 	"#/register": registerController,
@@ -13,10 +14,14 @@ const routes = {
 };
 
 const router = () => {
+	const navbarContainer = document.querySelector("#navbar");
 	const mainContainer = document.querySelector("#main");
 	const routeHash = location.hash || "#";
 
 	mainContainer.innerHTML = ""; // Always clean before each render
+	navbarContainer.innerHTML = "";
+
+	renderNavbar(navbarContainer);
 
 	// Manage dynamic hash route
 	const adId = parseAdIdFromHash(routeHash);

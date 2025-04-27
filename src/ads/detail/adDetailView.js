@@ -1,7 +1,7 @@
 export const renderAdDetails = (container, ad) => {
 	container.innerHTML = `
         <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden">
-            <img class="w-full h-80 object-cover" src="${ad.image}" 
+            <img class="w-full max-h-80% object-cover" src="${ad.image}" 
             alt="${ad.name}">
             <div class="p-4">
                     <h2 class="text-lg font-semibold text-gray-800 dark:text-white mb-2">
