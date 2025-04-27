@@ -11,7 +11,6 @@ export const adsListController = async (container) => {
 	try {
 		// show ads
 		const ads = await getAdsList();
-		console.log(ads);
 		showAdsList(container, ads);
 	} catch (error) {
 		renderAdsError(container, error.message);

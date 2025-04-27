@@ -1,4 +1,4 @@
-import { registerController } from "./registerController";
+import { registerController } from "./registerController.js";
 
 export const registerRoute = (container) => {
 	registerController(container);

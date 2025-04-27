@@ -1,5 +1,5 @@
-import { post } from "../../core/apiClient";
+import { post } from "../../core/apiClient.js";
 
-export const createUser = async (userName, password) => {
-	return await post("/auth/register", { userName, password });
+export const createUser = async (username, password) => {
+	return await post("/auth/register", { username, password });
 };

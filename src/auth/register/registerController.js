@@ -1,9 +1,10 @@
-import { renderRegisterForm } from "./registerView";
+import { renderRegisterForm } from "./registerView.js";
+import { createUser } from "./registerModel.js";
 
 // Handler
-const handleCreateUser = async (userName, password) => {
+const handleCreateUser = async (username, password) => {
 	try {
-		await createUser(userName, password);
+		await createUser(username, password);
 	} catch (error) {
 		const createUserError = new Error("It was not possible to create a User");
 		alert(createUserError);
@@ -19,7 +20,7 @@ export const registerController = (container) => {
 		event.preventDefault();
 
 		const usernameElement = form.querySelector("#username");
-		const userName = usernameElement.value;
+		const username = usernameElement.value;
 
 		const passwordElement = form.querySelector("#password");
 		const password = passwordElement.value;
@@ -32,8 +33,12 @@ export const registerController = (container) => {
 		if (password !== confirmPassword) {
 			const passwordError = new Error("Passwords must be the same");
 			alert(passwordError);
+			return;
 		}
 
-		handleCreateUser(userName, password);
+		handleCreateUser(username, password);
+		setTimeout(() => {
+			window.location = "/";
+		}, 1000);
 	});
 };
