@@ -1,7 +1,9 @@
 import { getAuthToken } from "../utils/authUtils.js";
 
 const API_BASE_URL = "http://localhost:8000";
+export const API_ENDPOINT_ADS = "/api/ads";
 
+// Fetch
 const fetchData = async (endpoint, options = {}) => {
 	const url = `${API_BASE_URL}${endpoint}`;
 	const response = await fetch(url, options);
@@ -19,10 +21,18 @@ const fetchData = async (endpoint, options = {}) => {
 	return await response.json();
 };
 
+// Get
 export const get = async (endpoint) => {
 	return await fetchData(endpoint);
 };
 
+// Get by Id
+export const getById = async (id) => {
+	const endpointWithId = `${API_ENDPOINT_ADS}/${id}?_expand=user`;
+	return await fetchData(endpointWithId);
+};
+
+// Post
 export const post = async (endpoint, body) => {
 	return fetchData(endpoint, {
 		method: "POST",
@@ -33,6 +43,7 @@ export const post = async (endpoint, body) => {
 	});
 };
 
+// Post using token
 export const postUsingToken = async (endpoint, options) => {
 	const token = getAuthToken();
 
