@@ -18,7 +18,7 @@ export const loginController = (container) => {
 			localStorage.setItem("token", response.accessToken);
 
 			if (response.accessToken) {
-				window.location = "/";
+				location.hash = "#/";
 			}
 		} catch (error) {
 			const loginError = new Error(

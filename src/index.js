@@ -1,19 +1,24 @@
-import { adsRoute } from "./ads/ads.js";
-import { loginRoute } from "./auth/login/login.js";
-import { registerRoute } from "./auth/register/register.js";
+import { createAdController } from "./ads/create/createAdController.js";
+import { listAdsController } from "./ads/list/listAdsController.js";
+import { loginController } from "./auth/login/loginController.js";
+import { registerController } from "./auth/register/registerController.js";
+
+const routes = {
+	"#/register": registerController,
+	"#/login": loginController,
+	"#/ads/create": createAdController,
+	default: listAdsController,
+};
 
 const router = () => {
 	const mainContainer = document.querySelector("#main");
-	const routeHash = location.hash;
-	const routePath = location.pathname;
+	const routeHash = location.hash || "#";
 
-	if (routeHash.startsWith("#/register") || routePath === "/register") {
-		registerRoute(mainContainer);
-	} else if (routeHash.startsWith("#/login") || routePath === "/login") {
-		loginRoute(mainContainer);
-	} else {
-		adsRoute(mainContainer);
-	}
+	mainContainer.innerHTML = ""; // Always clean before each render
+
+	const routeHandler = routes[routeHash] || routes["default"];
+
+	routeHandler(mainContainer);
 };
 
 window.addEventListener("hashchange", router);

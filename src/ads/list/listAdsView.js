@@ -3,7 +3,7 @@ export const showAdsList = (container, ads) => {
 		container.innerHTML = `
             <p class="text-center mt-10 text-gray-500">
             No ads have been publised yet.
-            </p>;
+            </p>
         `;
 		return; // To make sure it stops on this result
 	}

@@ -38,7 +38,7 @@ export const registerController = (container) => {
 
 		handleCreateUser(username, password);
 		setTimeout(() => {
-			location.hash = "#/login";
+			window.location = "#/login";
 		}, 1000);
 	});
 };
