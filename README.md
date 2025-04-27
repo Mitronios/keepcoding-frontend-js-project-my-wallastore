@@ -1,6 +1,6 @@
 # 🛍️ WallaStore Frontend JS
 
-Este proyecto es una práctica del módulo de Frontend del bootcamp **KeepCoding**.
+Este proyecto es una práctica para el módulo de Frontend del bootcamp Web Full Stack de **KeepCoding**.
 
 ## 📋 Descripción
 
