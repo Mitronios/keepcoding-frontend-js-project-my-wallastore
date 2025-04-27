@@ -5,7 +5,7 @@ import {
 	showAdsList,
 } from "./adsListView.js";
 
-export async function adsListController(container) {
+export const adsListController = async (container) => {
 	renderAdsLoading(container);
 
 	try {
@@ -16,4 +16,4 @@ export async function adsListController(container) {
 	} catch (error) {
 		renderAdsError(container, error.message);
 	}
-}
+};

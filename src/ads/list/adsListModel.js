@@ -1,5 +1,5 @@
 import { get } from "../../core/apiClient.js";
 
-export async function getAdsList() {
+export const getAdsList = async () => {
 	return await get("/api/ads");
-}
+};

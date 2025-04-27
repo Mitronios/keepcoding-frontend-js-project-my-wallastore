@@ -1,5 +1,5 @@
 import { adsListController } from "./list/adsListController.js";
 
-export function adsRoute(container) {
+export const adsRoute = (container) => {
 	adsListController(container);
-}
+};
