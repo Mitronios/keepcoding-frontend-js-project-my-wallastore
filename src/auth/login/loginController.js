@@ -1,7 +1,9 @@
+import { renderLoading, renderSuccess } from "../../utils/notificationUtils.js";
 import { userLogin } from "./loginModel.js";
 import { renderLoginForm } from "./loginView";
 
 export const loginController = (container) => {
+	renderLoading(container);
 	renderLoginForm(container);
 
 	const form = document.querySelector("#login-form");
@@ -14,6 +16,7 @@ export const loginController = (container) => {
 
 		try {
 			const response = await userLogin(username, password);
+			renderSuccess(container, `Logged Successfully Welcome! ${username}`);
 
 			localStorage.setItem("token", response.accessToken);
 
@@ -22,8 +25,7 @@ export const loginController = (container) => {
 			}
 		} catch (error) {
 			const loginError = new Error(
-				"Valid username and password are required",
-				error.message
+				"Valid username and password are required" + error.message
 			);
 			alert(loginError);
 		}

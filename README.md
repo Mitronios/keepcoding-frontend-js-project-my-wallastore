@@ -63,6 +63,8 @@ MyWallaStore/
 │   │   └── output.css
 │   └── utils/
 │       └── authUtils.js
+│       └── notificationsUtils.js
+│       └── parseHash.js
 ├── index.js
 ├── index.html
 └── db.json

@@ -5,7 +5,7 @@ export const renderNavbar = (container) => {
 
 	navbar.innerHTML = `
       <div class="text-xl font-bold">
-      <h1>WallaStore</h1>
+      <h1>WallaStore 🛍️</h1>
     </div>
     <div class="space-x-4">
       <a href="#/ads" class="hover:text-gray-400">Home</a>

@@ -6,19 +6,20 @@ export const API_ENDPOINT_ADS = "/api/ads";
 // Fetch
 const fetchData = async (endpoint, options = {}) => {
 	const url = `${API_BASE_URL}${endpoint}`;
-	const response = await fetch(url, options);
 
-	if (!response.ok) {
-		let errorMessage = "Something went wrong, please try again later.";
-		try {
-			const error = await response.json();
-			errorMessage = error.messsage || errorMessage;
-		} catch (error) {}
-
-		throw new Error(errorMessage);
+	try {
+		const response = await fetch(url, options);
+		if (!response.ok) {
+			throw new Error(
+				`Server error: ${response.status} - ${response.statusText}`
+			);
+		}
+		return await response.json();
+	} catch (error) {
+		if (error.message === "Failed to fetch") {
+			throw new Error("Out of service. Please try again later.");
+		}
 	}
-
-	return await response.json();
 };
 
 // Get

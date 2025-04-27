@@ -1,7 +1,9 @@
+import { renderLoading, renderSuccess } from "../../utils/notificationUtils.js";
 import { createAd } from "./createAdModel";
 import { renderCreateProductForm } from "./createAdView.js";
 
 export const createAdController = (container) => {
+	renderLoading(container);
 	renderCreateProductForm(container);
 
 	const form = document.querySelector("#product-form");
@@ -25,7 +27,9 @@ export const createAdController = (container) => {
 
 		try {
 			await createAd(body);
-			alert("Product Created succesfully!");
+
+			renderSuccess(container, "Product Created succesfully!");
+			location.hash = "#/";
 
 			form.reset();
 		} catch (error) {

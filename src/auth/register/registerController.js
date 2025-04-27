@@ -1,18 +1,30 @@
 import { renderRegisterForm } from "./registerView.js";
 import { createUser } from "./registerModel.js";
+import {
+	renderError,
+	renderLoading,
+	renderSuccess,
+} from "../../utils/notificationUtils.js";
 
 // Handler
-const handleCreateUser = async (username, password) => {
+const handleCreateUser = async (container, username, password) => {
 	try {
 		await createUser(username, password);
+		renderSuccess(container, `Wellcome to WallaStore ${username}!!!`);
+		setTimeout(() => {
+			window.location = "#/login";
+		}, 1000);
 	} catch (error) {
-		const createUserError = new Error("It was not possible to create a User");
-		alert(createUserError);
+		renderError(container, error.message);
+		setTimeout(() => {
+			location.reload();
+		}, 2500);
 	}
 };
 
 // Controller
 export const registerController = (container) => {
+	renderLoading(container);
 	renderRegisterForm(container);
 
 	const form = document.querySelector("#register-form");
@@ -29,16 +41,12 @@ export const registerController = (container) => {
 		const confirmPasswordElement = form.querySelector("#confirm-password");
 		const confirmPassword = confirmPasswordElement.value;
 
-		// to-do: add a true error notification for passwords and username
 		if (password !== confirmPassword) {
 			const passwordError = new Error("Passwords must be the same");
 			alert(passwordError);
 			return;
 		}
 
-		handleCreateUser(username, password);
-		setTimeout(() => {
-			window.location = "#/login";
-		}, 1000);
+		handleCreateUser(container, username, password);
 	});
 };
