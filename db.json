@@ -1,0 +1,107 @@
+{
+  "users": [
+    {
+      "username": "supertester",
+      "password": "$2b$10$Fv7bekr./T/1rZDt6wxeeOWykB4iUNc7tzRIpqawTkurL8Wj/kQwm",
+      "id": 1
+    },
+    {
+      "username": "code-tester",
+      "password": "$2b$10$Fv7bekr./T/1rZDt6wxeeOXpz3Slg14UtTbPEmGITaIrvDyZJe1K6",
+      "id": 2
+    },
+    {
+      "username": "product-tester",
+      "password": "$2b$10$Fv7bekr./T/1rZDt6wxeeOhvIhX9qCkJHsIAOsmNixwY2TAGPELAa",
+      "id": 3
+    }
+  ],
+  "ads": [
+    {
+      "name": "Nintendo Switch",
+      "description": "4 controllers included and original charger, just 5 months of use, great for multiplayer games.",
+      "price": 250,
+      "image": "https://cdn.mos.cms.futurecdn.net/P7fAM2JYVaUeMATqRKxbjL.jpg",
+      "sale": "For Sale",
+      "userId": 1,
+      "updatedAt": "2025-04-27T17:14:18.795Z",
+      "id": 1
+    },
+    {
+      "name": "Samsung 55-inch Smart TV",
+      "description": "Crystal UHD, 4K resolution, excellent picture quality, barely used.",
+      "price": 450,
+      "image": "https://i.gadgets360cdn.com/large/samsung_neo_qled_tv_55qn90a_review_our_planet_1634645857687.jpg",
+      "sale": "For Sale",
+      "userId": 1,
+      "updatedAt": "2025-04-27T17:15:11.809Z",
+      "id": 2
+    },
+    {
+      "name": "Bose QuietComfort 35 II Headphones",
+      "description": "Wireless, noise-cancelling headphones, amazing sound, very comfortable. Looking for today! ",
+      "price": 180,
+      "image": "https://m.media-amazon.com/images/I/61vLkmni80L._AC_UF894,1000_QL80_.jpg",
+      "userId": 1,
+      "updatedAt": "2025-04-27T17:16:10.176Z",
+      "id": 3
+    },
+    {
+      "name": "Apple iPad Air (Latest Model)",
+      "description": "64GB, Wi-Fi, Space Gray, perfect for work and entertainment.",
+      "price": 550,
+      "image": "https://m.media-amazon.com/images/I/61k05QwLuML._AC_UF1000,1000_QL80_.jpg",
+      "sale": "For Sale",
+      "userId": 2,
+      "updatedAt": "2025-04-27T17:17:45.769Z",
+      "id": 4
+    },
+    {
+      "name": "Sony PlayStation 5",
+      "description": "Brand new, sealed in box, ready for next-gen gaming, at least two controllers please.",
+      "price": 550,
+      "image": "https://i.blogs.es/885597/ps5apfinal/1366_2000.jpg",
+      "userId": 2,
+      "updatedAt": "2025-04-27T17:19:05.776Z",
+      "id": 5
+    },
+    {
+      "name": "Dell XPS 13 Laptop",
+      "description": "ntel Core i5, 8GB RAM, 256GB SSD, ultra-thin and lightweight.",
+      "price": 800,
+      "image": "https://m.media-amazon.com/images/I/71Bc0CG6RkL._AC_UF1000,1000_QL80_.jpg",
+      "sale": "For Sale",
+      "userId": 2,
+      "updatedAt": "2025-04-27T17:19:53.355Z",
+      "id": 6
+    },
+    {
+      "name": "KitchenAid Stand Mixer",
+      "description": "Classic series, red or black color, including dough hook, whisk, and flat beater. New or used.",
+      "price": 300,
+      "image": "https://www.kitchenaid.com/content/dam/global/en_us/digitalassets/pages/category/stand-mixers/hero/kv25g0xer_f01.jpg",
+      "userId": 3,
+      "updatedAt": "2025-04-27T17:21:30.350Z",
+      "id": 7
+    },
+    {
+      "name": "Canon EOS Rebel T8i Camera",
+      "description": "DSLR camera with 24.1MP sensor, perfect for beginners.",
+      "price": 650,
+      "image": "https://m.media-amazon.com/images/I/81wC39S3T-L._AC_UF894,1000_QL80_.jpg",
+      "sale": "For Sale",
+      "userId": 3,
+      "updatedAt": "2025-04-27T17:22:03.240Z",
+      "id": 8
+    },
+    {
+      "name": "Amazon Echo (4th Gen)",
+      "description": "Smart speaker with Alexa, charcoal color, I prefer an used one but new is ok.",
+      "price": 70,
+      "image": "https://www.lifewire.com/thmb/9SQBRJ440kHiXkO5lHUDcEUEgRI=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/_hero_SQ_Amazon-Echo-Dot-4th-Generation-1-fc73a047312d4d588ffcbeae7bdd3368.jpg",
+      "userId": 3,
+      "updatedAt": "2025-04-27T17:23:05.779Z",
+      "id": 9
+    }
+  ]
+}
